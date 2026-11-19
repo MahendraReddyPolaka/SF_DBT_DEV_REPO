@@ -3,5 +3,5 @@
  try_cast(id as int) as id,
  first_name,
  last_name 
- from {{source('datafeed_shared_schema','customerdata')}}
+ from {{source('raw_schema_dev','customerdata')}}
 
