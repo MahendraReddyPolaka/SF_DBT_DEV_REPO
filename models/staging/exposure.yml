@@ -1,0 +1,20 @@
+version: 2
+
+exposures:
+
+- name: weekly_metrics
+  label: Mahendra by the Week
+  type: dashboard
+  maturity: high
+  description: 
+      For more exposure about project details
+
+  depends_on:
+    - ref('final_business')
+    - source('raw_schema_dev','ordersdata')
+    - source('raw_schema_dev','customerdata')
+    - source('raw_schema_dev','customers')
+
+  owner:
+   name:  Mahendra
+   email: mahendra@gmail.com

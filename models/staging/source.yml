@@ -4,6 +4,30 @@ sources:
       database: "{{('sales_db')}}"
       schema: raw_schema_dev
       tables:
-        - name: customerdata
+        - name: customerdata 
         - name: ordersdata
+          columns:
+          - name: id
+            description: "Check unique, not null for this tables, id column"
+            tests:
+                - unique
+                - not_null
+          - name: status
+            description: "Check whether defined values only present in this column or not"
+            tests:
+              - accepted_values:
+                  arguments:
+                    values: ['completed','returned','return_pending','placed','shipped','Test']
+
         - name: customers
+
+models:
+    - name: orders
+      description: "details about the model"
+      columns:
+          - name: id
+            description: "Check unique, not null for this tables, id column"
+            tests:
+                - unique
+                - not_null
+    
